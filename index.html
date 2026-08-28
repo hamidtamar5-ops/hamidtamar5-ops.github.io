@@ -142,14 +142,38 @@
 
     .lead { margin-top: 0; }
 
+    .catalog {
+      margin: -0.25rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
     .apps {
       display: grid;
       gap: 0.85rem;
     }
 
+    .group {
+      grid-column: 1 / -1;
+      margin: 0.55rem 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .group:first-of-type { margin-top: 0; }
+
+    article.compact {
+      display: flex;
+      flex-direction: column;
+    }
+
+    article.compact .btn { margin-top: auto; }
+
     @media (min-width: 640px) {
       .apps { grid-template-columns: 1fr 1fr; }
-      .apps .featured { grid-column: 1 / -1; }
+      .apps .featured,
+      .apps .group { grid-column: 1 / -1; }
     }
 
     article {
@@ -210,12 +234,13 @@
 
     .btn-light:hover { background: var(--blue-soft); }
 
-    .btn-ghost {
+    .hero-actions .btn-ghost {
       background: transparent;
-      color: var(--blue-dark);
-      border: 1px solid rgba(21, 101, 192, 0.35);
-      margin-inline-start: 0.35rem;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.55);
     }
+
+    .hero-actions .btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
 
     .contact-list {
       list-style: none;
@@ -271,6 +296,7 @@
         <p class="ar" lang="ar" dir="rtl">تطبيقات تعليمية ثنائية اللغة بالعربية والفرنسية.</p>
         <div class="hero-actions">
           <a class="btn btn-light" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar&amp;hl=en" target="_blank" rel="noopener noreferrer">قصص فرنسية sur Google Play</a>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=6054277258822515863&amp;hl=en" target="_blank" rel="noopener noreferrer">Toutes les apps</a>
         </div>
       </div>
     </div>
@@ -292,6 +318,10 @@
 
     <section id="applications">
       <h2>Applications</h2>
+      <p class="catalog">
+        17 applications sur le compte Play
+        <a href="https://play.google.com/store/apps/dev?id=6054277258822515863&amp;hl=en" target="_blank" rel="noopener noreferrer">tamandro</a>.
+      </p>
       <div class="apps">
         <article class="featured">
           <span class="badge">App principale</span>
@@ -304,18 +334,90 @@
           <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar&amp;hl=en" target="_blank" rel="noopener noreferrer">Ouvrir sur Google Play</a>
         </article>
 
-        <article>
-          <h3>Hiwar</h3>
+        <h3 class="group">Vocabulaire et dialogues</h3>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">تعلم الفرنسية – 1000 كلمة</h3>
+          <p class="sub">1000 mots français / arabe</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.motsmultilangues" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3>Hiwar: Learn Arabic Dialogues</h3>
           <p class="sub">Dialogues multilingues (arabe pivot)</p>
-          <p>Dialogues du quotidien pour pratiquer plusieurs langues autour de l’arabe.</p>
           <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.hiwarda" target="_blank" rel="noopener noreferrer">Google Play</a>
         </article>
+        <article class="compact">
+          <h3>LinguArabe: Learn Languages</h3>
+          <p class="sub">Apprentissage des langues</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.linguarabe" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3>1000 English Words</h3>
+          <p class="sub">Vocabulaire anglais</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.mostusedwords" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3>French Arabic Dialogues A1-C2</h3>
+          <p class="sub">Dialogues français / arabe, niveaux A1–C2</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.tdfrar" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
 
-        <article>
-          <h3>Autres applications</h3>
-          <p class="sub">LinguArabe, vocabulaire, histoires…</p>
-          <p>Toutes les apps du compte Play <strong>tamandro</strong> (éducation bilingue).</p>
-          <a class="btn" href="https://play.google.com/store/apps/developer?id=tamandro" target="_blank" rel="noopener noreferrer">Voir toutes les apps</a>
+        <h3 class="group">Histoires bilingues</h3>
+        <article class="compact">
+          <h3>Arabic Stories - Learn Arabic</h3>
+          <p class="sub">Histoires pour apprendre l’arabe</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresangar" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص إيطالية | تعلم الإيطالية</h3>
+          <p class="sub">Histoires arabe / italien</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresitar" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص صينية مترجمة- تعلم الصينية</h3>
+          <p class="sub">Histoires arabe / chinois</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresarchoi" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص روسية مترجمة</h3>
+          <p class="sub">Histoires arabe / russe</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresarrus" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص ألمانية - تعلم الألمانية</h3>
+          <p class="sub">Histoires arabe / allemand</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresarall" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص تركية مترجمة: تعلم التركية</h3>
+          <p class="sub">Histoires arabe / turc</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresartu" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص برتغالية</h3>
+          <p class="sub">Histoires arabe / portugais</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresarpt2" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3 lang="ar" dir="rtl">قصص إسبانية - تعلم الإسبانية</h3>
+          <p class="sub">Histoires arabe / espagnol</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresares" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3>French Spanish Stories</h3>
+          <p class="sub">Histoires français / espagnol</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrspanish" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+        <article class="compact">
+          <h3>French English Stories</h3>
+          <p class="sub">Histoires français / anglais</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrang" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </article>
+
+        <h3 class="group">Outils</h3>
+        <article class="compact">
+          <h3>Linear interpolation graph</h3>
+          <p class="sub">Graphique d’interpolation linéaire</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.linearInterpolation" target="_blank" rel="noopener noreferrer">Google Play</a>
         </article>
       </div>
     </section>
@@ -337,7 +439,7 @@
         </li>
         <li>
           <span class="label">Google Play</span>
-          <a href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar&amp;hl=en" target="_blank" rel="noopener noreferrer">قصص فرنسية</a>
+          <a href="https://play.google.com/store/apps/dev?id=6054277258822515863&amp;hl=en" target="_blank" rel="noopener noreferrer">Compte tamandro</a>
         </li>
       </ul>
     </section>
