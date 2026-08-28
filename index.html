@@ -95,6 +95,13 @@
       margin-top: 2rem;
     }
 
+    .hero-actions {
+      margin-top: 1.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
     .hero h1 {
       margin: 0 0 0.5rem;
       font-size: clamp(1.6rem, 3vw, 2.15rem);
@@ -196,6 +203,13 @@
 
     .btn:hover { background: var(--blue-dark); }
 
+    .btn-light {
+      background: #fff;
+      color: var(--blue-dark);
+    }
+
+    .btn-light:hover { background: var(--blue-soft); }
+
     .btn-ghost {
       background: transparent;
       color: var(--blue-dark);
@@ -255,6 +269,9 @@
         <h1>Apprendre le français et l’arabe, simplement.</h1>
         <p>Applications Android bilingues pour lire, écouter et progresser par niveaux.</p>
         <p class="ar" lang="ar" dir="rtl">تطبيقات تعليمية ثنائية اللغة بالعربية والفرنسية.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar&amp;hl=en" target="_blank" rel="noopener noreferrer">قصص فرنسية sur Google Play</a>
+        </div>
       </div>
     </div>
   </header>
@@ -278,28 +295,27 @@
       <div class="apps">
         <article class="featured">
           <span class="badge">App principale</span>
-          <h3 lang="ar" dir="rtl">قصص فرنسية</h3>
-          <p class="sub">Histoires bilingues français / arabe</p>
+          <h3 lang="ar" dir="rtl">قصص فرنسية - تعلم الفرنسية</h3>
+          <p class="sub">Histoires bilingues français / arabe · 10K+ téléchargements</p>
           <p>
-            Histoires courtes par niveaux de difficulté, avec texte parallèle
-            et lecture audio. Idéal pour enrichir le vocabulaire tout en
-            s’entraînant à la prononciation.
+            Apprendre le français par des histoires, avec traduction arabe et audio.
+            Niveaux progressifs, lecture hors ligne, recherche de textes.
           </p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar" rel="noopener">Voir sur Google Play</a>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar&amp;hl=en" target="_blank" rel="noopener noreferrer">Ouvrir sur Google Play</a>
         </article>
 
         <article>
           <h3>Hiwar</h3>
           <p class="sub">Dialogues multilingues (arabe pivot)</p>
           <p>Dialogues du quotidien pour pratiquer plusieurs langues autour de l’arabe.</p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.hiwarda" rel="noopener">Google Play</a>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.hiwarda" target="_blank" rel="noopener noreferrer">Google Play</a>
         </article>
 
         <article>
-          <h3>Mots multilangues</h3>
-          <p class="sub">Vocabulaire comparé</p>
-          <p>Apprendre des mots en plusieurs langues, avec l’arabe comme référence.</p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.motsmultilangues" rel="noopener">Google Play</a>
+          <h3>Autres applications</h3>
+          <p class="sub">LinguArabe, vocabulaire, histoires…</p>
+          <p>Toutes les apps du compte Play <strong>tamandro</strong> (éducation bilingue).</p>
+          <a class="btn" href="https://play.google.com/store/apps/developer?id=tamandro" target="_blank" rel="noopener noreferrer">Voir toutes les apps</a>
         </article>
       </div>
     </section>
@@ -318,6 +334,10 @@
         <li>
           <span class="label">E-mail</span>
           <a href="mailto:hamidtamar5@gmail.com">hamidtamar5@gmail.com</a>
+        </li>
+        <li>
+          <span class="label">Google Play</span>
+          <a href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar&amp;hl=en" target="_blank" rel="noopener noreferrer">قصص فرنسية</a>
         </li>
       </ul>
     </section>
