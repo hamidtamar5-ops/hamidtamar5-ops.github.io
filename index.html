@@ -3,28 +3,328 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hamid Tamar — Apps Android</title>
+  <title>Hamid Tamar — Applications éducatives</title>
+  <meta name="description" content="Applications Android éducatives bilingues (français / arabe) par Hamid Tamar.">
+  <meta name="theme-color" content="#1565C0">
+  <link rel="canonical" href="https://hamidtamar5-ops.github.io/">
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 40rem;
-      margin: 3rem auto;
-      padding: 0 1.25rem;
-      line-height: 1.6;
-      color: #1a1a1a;
+    :root {
+      --blue: #1565C0;
+      --blue-dark: #0D47A1;
+      --blue-soft: #E3F2FD;
+      --orange: #FF9800;
+      --text: #1A237E;
+      --body: #263238;
+      --muted: #607D8B;
+      --card: #ffffff;
+      --bg: #F5F9FC;
+      --radius: 16px;
     }
-    h1 { font-size: 1.5rem; }
-    a { color: #1565c0; }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      line-height: 1.65;
+    }
+
+    a { color: var(--blue-dark); }
+
+    .wrap {
+      width: min(880px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue) 55%, #42A5F5);
+      color: #fff;
+      padding: 1.25rem 0 2.75rem;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.18);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand strong { display: block; font-size: 1.05rem; }
+    .brand span { display: block; font-size: 0.8rem; opacity: 0.88; }
+
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    nav a:hover { background: rgba(255, 255, 255, 0.12); }
+
+    .hero {
+      margin-top: 2rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.25;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 38rem;
+      opacity: 0.95;
+    }
+
+    .ar {
+      font-size: 1.05rem;
+      direction: rtl;
+      margin-top: 0.45rem !important;
+    }
+
+    main {
+      padding: 1.5rem 0 3rem;
+      margin-top: -1.25rem;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid rgba(21, 101, 192, 0.1);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.4rem 1.45rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 24px rgba(13, 71, 161, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 0.85rem;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .lead { margin-top: 0; }
+
+    .apps {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 640px) {
+      .apps { grid-template-columns: 1fr 1fr; }
+      .apps .featured { grid-column: 1 / -1; }
+    }
+
+    article {
+      border: 1px solid rgba(21, 101, 192, 0.12);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      background: #fff;
+    }
+
+    .featured {
+      background: linear-gradient(180deg, var(--blue-soft), #fff 55%);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.45rem;
+    }
+
+    article h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    article .sub {
+      margin: 0 0 0.55rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    article p { margin: 0 0 0.9rem; }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--blue);
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .btn:hover { background: var(--blue-dark); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--blue-dark);
+      border: 1px solid rgba(21, 101, 192, 0.35);
+      margin-inline-start: 0.35rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 0.65rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #ECEFF1;
+    }
+
+    .contact-list li:last-child { border-bottom: 0; }
+
+    .label {
+      min-width: 6.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 0 1rem 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--muted); }
   </style>
 </head>
 <body>
-  <h1>Hamid Tamar</h1>
-  <p>Applications Android éducatives (français / arabe).</p>
-  <p>
-    App principale :
-    <strong>قصص فرنسية</strong>
-    — histoires bilingues français-arabe.
-  </p>
-  <p>Contact : <a href="mailto:hamidtamar5@gmail.com">hamidtamar5@gmail.com</a></p>
+  <header>
+    <div class="wrap">
+      <div class="top">
+        <a class="brand" href="/">
+          <span class="mark">HT</span>
+          <span>
+            <strong>Hamid Tamar</strong>
+            <span>Apps éducatives · Maroc</span>
+          </span>
+        </a>
+        <nav aria-label="Navigation principale">
+          <a href="#a-propos">À propos</a>
+          <a href="#applications">Applications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <h1>Apprendre le français et l’arabe, simplement.</h1>
+        <p>Applications Android bilingues pour lire, écouter et progresser par niveaux.</p>
+        <p class="ar" lang="ar" dir="rtl">تطبيقات تعليمية ثنائية اللغة بالعربية والفرنسية.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="a-propos">
+      <h2>À propos</h2>
+      <p class="lead">
+        Je développe des applications Android d’apprentissage linguistique,
+        centrées sur des textes courts, le bilingue français–arabe et une
+        lecture progressive.
+      </p>
+      <p>
+        L’objectif : des apps claires, utilisables hors ligne autant que possible,
+        et adaptées aux apprenants au Maroc et dans le monde francophone / arabophone.
+      </p>
+    </section>
+
+    <section id="applications">
+      <h2>Applications</h2>
+      <div class="apps">
+        <article class="featured">
+          <span class="badge">App principale</span>
+          <h3 lang="ar" dir="rtl">قصص فرنسية</h3>
+          <p class="sub">Histoires bilingues français / arabe</p>
+          <p>
+            Histoires courtes par niveaux de difficulté, avec texte parallèle
+            et lecture audio. Idéal pour enrichir le vocabulaire tout en
+            s’entraînant à la prononciation.
+          </p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.histoiresfrar" rel="noopener">Voir sur Google Play</a>
+        </article>
+
+        <article>
+          <h3>Hiwar</h3>
+          <p class="sub">Dialogues multilingues (arabe pivot)</p>
+          <p>Dialogues du quotidien pour pratiquer plusieurs langues autour de l’arabe.</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.hiwarda" rel="noopener">Google Play</a>
+        </article>
+
+        <article>
+          <h3>Mots multilangues</h3>
+          <p class="sub">Vocabulaire comparé</p>
+          <p>Apprendre des mots en plusieurs langues, avec l’arabe comme référence.</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.tamandro.motsmultilangues" rel="noopener">Google Play</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="label">Développeur</span>
+          <span>Hamid Tamar</span>
+        </li>
+        <li>
+          <span class="label">Pays</span>
+          <span>Maroc</span>
+        </li>
+        <li>
+          <span class="label">E-mail</span>
+          <a href="mailto:hamidtamar5@gmail.com">hamidtamar5@gmail.com</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Hamid Tamar · <a href="https://hamidtamar5-ops.github.io/">hamidtamar5-ops.github.io</a></p>
+  </footer>
 </body>
 </html>
